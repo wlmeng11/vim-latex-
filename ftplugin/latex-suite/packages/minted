@@ -1,0 +1,15 @@
+if exists("minted_package_file")
+	finish
+endif
+let minted_package_file = 1
+
+let g:TeX_package_option_minted = ''
+
+let g:TeX_package_minted =
+\ 'env:comment,'
+\.'env:minted,'
+\.'env:minted*,'
+
+syn region texZone   start="\\begin{minted}"    end="\\end{minted}\|%stopzone\>" fold
+
+" vim: ft=vim:ff=unix:
